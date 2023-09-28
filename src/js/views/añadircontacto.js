@@ -1,14 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 export const AñadirContacto = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate(); // Obtén la función de navegación
-
-
-
 
   const [contact, setContact] = useState({
     full_name: "",
@@ -97,9 +93,7 @@ export const AñadirContacto = () => {
             }
           ></input>
         </div>
-        <button type="submit" className="btn btn-primary">
-          Save
-        </button>
+        <button type="submit" className="btn btn-primary">Save</button>
       </form>
     </div>
   );

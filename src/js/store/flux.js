@@ -79,19 +79,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 		},
 
-		loadAgendaUser: async agendaSlug => {
-			try {
-			  const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/agenda/${agendaSlug}`);
-			  if (!response.ok) {
-				throw new Error("No se pudo cargar la agenda");
-			  }
-			  const data = await response.json();
-			  return data;
-			} catch (error) {
-			  console.error("Error al cargar los datos de la agenda:", error);
-			  throw error;
-			}
-		  },
+
+		  
+		
+
 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {

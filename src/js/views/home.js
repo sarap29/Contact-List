@@ -1,26 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
-
-
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-  const params = useParams();
+
+  //Para que elimine y luego actualice el contacto
 
   useEffect(() => {
-    // Llama a la acción para cargar los datos de la agenda por su ID
-    actions
-      .loadAgendaUser(params.getid)
-      .then((data) => {
-        setAgendaData(data);
-      })
-      .catch((error) => {
-        console.error("Error al cargar la agenda:", error);
-      });
-  }, [actions, params.getid]);
+    actions.obtenerContacto();
+  }, [store.listacontactos]);
 
   return (
     <div className="main-container">
@@ -41,35 +31,35 @@ export const Home = () => {
             <h2>Contactos</h2>
           </div>
           <div className="col-3">
-          <Link to="/anadircontacto"> <i className="fa-solid fa-plus">
-					
-          </i></Link>
+            <Link to="/anadircontacto">
+              <i className="fa-solid fa-plus"></i>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="contenedor-agenda">
-        <div className="">
-          {store.listacontactos.map((contact) => (
-            <div className="row-agenda" key={contact.id}>
-              <div className="col-2">
-                <i className="fa-solid fa-user"></i>
-              </div>
-              <div className="col-9">
-                <p>{contact.title}</p>
-                <h4>Name: {contact.full_name}</h4>
-                <p>Email: {contact.email}</p>
-                <p>Phone: {contact.phone}</p>
-                <p>Address: {contact.address} </p>
-              </div>
-              <div className="col-1">
-                <i className="fa-solid fa-pen"></i>
-                <i className="fa-solid fa-trash" onClick={() => actions.eliminarContactos(contact.id)}>
-                </i>
-              </div>
+        {store.listacontactos.map((contact) => (
+          <div className="row-agenda" key={contact.id}>
+            <div className="col-2">
+              <i className="fa-solid fa-user"></i>
             </div>
-          ))}
-        </div>
+            <div className="col-9">
+              <p>{contact.title}</p>
+              <h4>Name: {contact.full_name}</h4>
+              <p>Email: {contact.email}</p>
+              <p>Phone: {contact.phone}</p>
+              <p>Address: {contact.address} </p>
+            </div>
+            <div className="col-1">
+              <i className="fa-solid fa-pen"></i>
+              <i
+                className="fa-solid fa-trash"
+                onClick={() => actions.eliminarContactos(contact.id)}
+              ></i>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
