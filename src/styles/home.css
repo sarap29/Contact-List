@@ -1,0 +1,182 @@
+.imagen {
+    width: 50%;
+}
+
+button.btn.btn-primary {
+    display: block;
+    margin: 0 auto !important;
+}
+
+
+:root {
+    --mobile-width: 370px;
+    --mobile-height: 650px;
+  }
+  
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    padding: 10px;
+ /*   background-image: linear-gradient(to bottom right, #ffffff, #c9c9c9);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.icono-flecha {
+  float: left;
+}
+
+i.fa-solid.fa-address-book {
+  font-size: 40px;
+  padding: 14px 16px;
+  background: white;
+  border-radius: 100%;
+  color: #b99aed;
+}
+
+
+i.fa-solid.fa-user {
+  font-size: 20px;
+  padding: 10px 12px;
+  background: #c2a6f4;
+  border-radius: 100%;
+  color: #ffffff;
+  margin-left: -4px;
+}
+
+i.fa-solid.fa-pen {
+  color: #9871d7;
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+i.fa-solid.fa-trash {
+  color: #9871d7;
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+h1 {
+    font-weight: 200;
+    margin-top: 90px;
+    font-size: 25px;
+    font-family: 'Poppins', sans-serif;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+.main-container {
+  margin: 0 auto;
+  /* position: relative; */
+  width: var(--mobile-width);
+  /* height: var(--mobile-height); */
+  background: #ffffff;
+  font-family: "Poppins";
+  border-radius: 30px;
+  /* overflow: hidden; */
+  box-shadow: 0 0 20px rgba(0,0,0,.2);
+  padding-bottom: 40px;
+}
+      
+      .caja-degradado {
+        position: relative;
+        padding: 30px;
+        color: white;
+        background-image: linear-gradient(to right, #c7acf7, #946cd4);
+        text-align: center;
+        box-shadow: 0 10px 5px -5px rgba(202, 119, 209, .5);
+        border-radius: 30px;
+        box-shadow: 2px 2px 40px #bebebe, -2px -2px 40px #ffffff;
+        height: 251px;
+      }
+    
+        
+        h3 {
+            font-weight: 200;
+        font-family: 'Poppins', sans-serif;
+          margin-bottom: 40px;
+          text-transform: uppercase;
+          font-size: .5em;
+          font-weight: bold;
+          letter-spacing: 1px;
+        }
+
+          
+        h2 {
+            font-weight: 200;
+            color: #9d77da;
+            font-size: 2rem;
+        }
+        
+
+        .action-btn {
+          position: absolute;
+          background-color: #fff;
+          bottom: 0; right: 30px;
+          width: 45px;
+          height: 45px;
+          border: none;
+          border-radius: 50%;
+          transform: translatey(50%);
+          z-index: 1;
+        }
+
+      
+      .contact-list {
+        padding: 3em;
+        }
+        
+        
+button.add-contact {
+       color: white;
+       background: #9870d7;
+       border: none;
+   }
+
+   i.fa-solid.fa-plus {
+    justify-content: end;
+    padding: 14px 16px;
+    background: #9b75d9;
+    border-radius: 100%;
+    color: #ffffff;
+}
+
+      
+  
+
+.contenedor-agenda {
+  padding: 1px 20px 14px 14px;
+  box-shadow: 2px 2px 17px #bebebe, -2px -2px 20px #ffffff;
+  background: #e7d3ed;
+  margin: 14px 20px;
+  border-radius: 8px;
+}
+
+.row-agenda {
+  margin-top: 20px;
+  border-radius: 8px;
+  display: flex;
+  background: white;
+  padding: 10px 10px;
+}
+
+.list-group-item {
+  position: relative;
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #212529;
+  text-decoration: none;
+  background-color: #fff0;
+  border: none;
+}

@@ -22,6 +22,8 @@ const injectContext = PassedComponent => {
 		);
 
 		useEffect(() => {
+			state.actions.obtenerContacto();
+			state.actions.loadAgendas(); 
 			/**
 			 * EDIT THIS!
 			 * This function is the equivalent to "window.onLoad", it only runs once on the entire application lifetime
