@@ -52,7 +52,10 @@ export const Home = () => {
               <p>Address: {contact.address} </p>
             </div>
             <div className="col-1">
-              <i className="fa-solid fa-pen"></i>
+            <Link to={`/editarcontacto/${contact.id}`}>
+								<i class="fa-solid fa-pen"></i>
+							</Link>
+
               <i
                 className="fa-solid fa-trash"
                 onClick={() => actions.eliminarContactos(contact.id)}

@@ -154,13 +154,10 @@ button.add-contact {
 
       
   
-
 .contenedor-agenda {
-  padding: 1px 20px 14px 14px;
+  padding: 9px 26px 26px 20px;
   box-shadow: 2px 2px 17px #bebebe, -2px -2px 20px #ffffff;
-  background: #e7d3ed;
-  margin: 14px 20px;
-  border-radius: 8px;
+  background: #c6abf6;
 }
 
 .row-agenda {
