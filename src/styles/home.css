@@ -1,70 +1,94 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;200;300;400;600&display=swap');
+
+
 .imagen {
-    width: 50%;
+  width: 50%;
 }
 
 button.btn.btn-primary {
-    display: block;
-    margin: 0 auto !important;
+  display: block;
+  margin: 0 auto !important;
+}
+
+.phone {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+.presentacion {
+  padding-bottom: 0px;
+  padding-right: 48px;
+  padding-left: 48px;
+}
+
+.descripcion {
+  margin-top: -10px;
+  padding-right: 76px;
+  padding-left: 76px;
+}
+
+:root {
+  --mobile-width: 370px;
+  --mobile-height: 650px;
 }
 
 
-:root {
-    --mobile-width: 370px;
-    --mobile-height: 650px;
-  }
-  
-
 
 body {
-    font-family: 'Poppins', sans-serif;
-    height: 100vh;
-    padding: 10px;
- /*   background-image: linear-gradient(to bottom right, #ffffff, #c9c9c9);*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  font-family: 'Barlow Condensed', sans-serif;
+  height: 100vh;
+  padding: 10px;
+  background: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
 }
 
 .icono-flecha {
   float: left;
 }
 
-i.fa-solid.fa-address-book {
-  font-size: 40px;
-  padding: 14px 16px;
-  background: white;
-  border-radius: 100%;
-  color: #b99aed;
+.footer.d-flex {
+  justify-content: center;
+  display: flex !important;
 }
 
-
 i.fa-solid.fa-user {
+  margin-top: 10px;
   font-size: 20px;
   padding: 10px 12px;
-  background: #c2a6f4;
+  background: #91e2a8;
   border-radius: 100%;
   color: #ffffff;
-  margin-left: -4px;
+  margin-left: 5px;
 }
 
 i.fa-solid.fa-pen {
-  color: #9871d7;
+  margin-top: 12px;
+  color: #7ccd93;
   margin-left: 0px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 i.fa-solid.fa-trash {
-  color: #9871d7;
+  margin-top: 12px;
+  color: #7ccd93;
   margin-left: 0px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h1 {
-    font-weight: 200;
-    margin-top: 90px;
-    font-size: 25px;
-    font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #91e2a8;
+  font-weight: 200;
+  margin-top: 16px;
+  font-size: 60px;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 h4 {
@@ -72,99 +96,248 @@ h4 {
 }
 
 p {
-  font-size: 14px;
+  text-align: center;
+  ;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
   margin-top: 0;
-  margin-bottom: 0px;
+  margin-bottom: 24px;
 }
+
+button {
+  font-family: 'Barlow Condensed', sans-serif;
+  outline: 0;
+  background: #91e2a8;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #565656;
+  font-size: 22px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 60px;
+}
+
+
+.footer.d-flex {
+  border-radius: 0px 0px 28px 28px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  background: #91e2a8;
+  justify-content: center;
+  display: flex !important;
+}
+
+i.fa-solid.fa-house {
+  color: white;
+  font-size: 22px;
+}
+
+i.fa-solid.fa-user-plus {
+  color: white;
+  font-size: 22px;
+}
+
+i.fa-solid.fa-address-book {
+  color: white;
+  font-size: 22px;
+}
+
+.piepagina {
+  padding: 0px 50px;
+}
+
+
 .main-container {
-  margin: 0 auto;
-  /* position: relative; */
+  font-family: 'Barlow Condensed', sans-serif;
+  background-color: white;
+  z-index: 100;
+  border: 2px solid #fff;
+  margin: 40px auto;
   width: var(--mobile-width);
-  /* height: var(--mobile-height); */
-  background: #ffffff;
   font-family: "Poppins";
   border-radius: 30px;
-  /* overflow: hidden; */
-  box-shadow: 0 0 20px rgba(0,0,0,.2);
-  padding-bottom: 40px;
+  box-shadow: 0 0 18px rgba(0, 0, 0, .2);
 }
-      
-      .caja-degradado {
-        position: relative;
-        padding: 30px;
-        color: white;
-        background-image: linear-gradient(to right, #c7acf7, #946cd4);
-        text-align: center;
-        box-shadow: 0 10px 5px -5px rgba(202, 119, 209, .5);
-        border-radius: 30px;
-        box-shadow: 2px 2px 40px #bebebe, -2px -2px 40px #ffffff;
-        height: 251px;
-      }
-    
-        
-        h3 {
-            font-weight: 200;
-        font-family: 'Poppins', sans-serif;
-          margin-bottom: 40px;
-          text-transform: uppercase;
-          font-size: .5em;
-          font-weight: bold;
-          letter-spacing: 1px;
-        }
 
-          
-        h2 {
-            font-weight: 200;
-            color: #9d77da;
-            font-size: 2rem;
-        }
-        
+.raya {
+  padding-top: 50px;
+  background: #d9eade;
+  width: 100%;
+}
 
-        .action-btn {
-          position: absolute;
-          background-color: #fff;
-          bottom: 0; right: 30px;
-          width: 45px;
-          height: 45px;
-          border: none;
-          border-radius: 50%;
-          transform: translatey(50%);
-          z-index: 1;
-        }
+.contact-list {
+  padding-bottom: 10px;
+  background: #fff;
+  padding-top: 1em;
+}
 
-      
-      .contact-list {
-        padding: 3em;
-        }
-        
-        
+.row.header {
+  margin-left: 0px;
+  margin-right: 0px;
+  border-radius: 25px 27px 0px 0px;
+  padding: 25px 0px;
+}
+
+
+
+i.fa-solid.fa-wifi {
+  font-size: 14px;
+  color: #91e2a8;
+  margin-right: 12px;
+  float: right;
+  text-align: right;
+  margin-top: 1px;
+}
+
+.col.hora {
+  font-size: 14px;
+  color: #91e2a8;
+  padding-left: 16px;
+}
+
+i.fa-solid.fa-battery-half {
+  color: #91e2a8;
+  margin-right: 5px;
+  float: right;
+  text-align: right;
+}
+
+.caja-degradado {
+  position: relative;
+  padding: 30px;
+  color: white;
+  background-image: linear-gradient(to right, #c7acf7, #946cd4);
+  text-align: center;
+  box-shadow: 0 10px 5px -5px rgba(202, 119, 209, .5);
+  border-radius: 30px;
+  /*  box-shadow: 2px 2px 40px #bebebe, -2px -2px 40px #ffffff;*/
+  height: 251px;
+}
+
+
+h3 {
+  font-weight: 200;
+  font-family: 'Barlow Condensed', sans-serif;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-size: .5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+}
+
+.col-9 {
+  padding-left: 12px;
+}
+
+button#nuevoeditar {
+  width: 91%;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-size: 20px;
+}
+
+.alertanuevoeditado {
+  margin-top: -10px;
+  padding-right: 51px;
+  padding-left: 51px;
+}
+
+form {
+  margin-top: 27px;
+  padding: 0px 16px;
+}
+
+input#full_name, input#email, input#phone, input#address {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 17px;
+}
+
+label.mb-2 {
+  color: #7fc982;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+  color: #66c982;
+  font-size: 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.alert-success {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  color: #263138;
+  background-color: #f2f2f2;
+  border-color: #565656;
+}
+
+.action-btn {
+  position: absolute;
+  background-color: #fff;
+  bottom: 0;
+  right: 30px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  transform: translatey(50%);
+  z-index: 1;
+}
+
+
 button.add-contact {
-       color: white;
-       background: #9870d7;
-       border: none;
-   }
-
-   i.fa-solid.fa-plus {
-    justify-content: end;
-    padding: 14px 16px;
-    background: #9b75d9;
-    border-radius: 100%;
-    color: #ffffff;
+  color: white;
+  background: #91e2a8;
+  border: none;
 }
 
-      
-  
+/*
+i.fa-solid.fa-plus {
+  justify-content: end;
+  padding: 14px 16px;
+  background: #91e2a8;
+  border-radius: 100%;
+  color: #ffffff;
+}*/
+
+h4#name {
+  text-align: left;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px;
+
+}
+
+p#texto {
+  text-align: left;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
 .contenedor-agenda {
   padding: 9px 26px 26px 20px;
-  box-shadow: 2px 2px 17px #bebebe, -2px -2px 20px #ffffff;
-  background: #c6abf6;
+  /* box-shadow: 2px 2px 17px #bebebe, -2px -2px 20px #ffffff; */
+  background: #ffffff;
 }
 
 .row-agenda {
+  margin-bottom: 30px;
+  border: 1px solid #c9c9c9;
   margin-top: 20px;
   border-radius: 8px;
   display: flex;
-  background: white;
+  background: #f2f2f2;
   padding: 10px 10px;
 }
 
