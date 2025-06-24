@@ -18,16 +18,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 
-			obtenerContacto: () => {
-				fetch(`https://playground.4geeks.com/contact/agendas/sara/contacts`, {
-					method: 'GET',
-				})
-					.then(response => response.json())
-					.then(result => {
-						console.log("resultado", result)
-						setStore({ listacontactos: result })
-					})
-					.catch(error => console.log(error));
+			obtenerContacto: async () => {
+				const { agendaSlug } = getStore();
+				if (!agendaSlug) {
+					console.error("agendaSlug no definido");
+					return;
+				}
+				try {
+					const response = await fetch(`https://playground.4geeks.com/apis/fake/contact/agendas/${agendaSlug}`, {
+						method: "GET",
+					});
+					if (!response.ok) {
+						throw new Error(`Agenda '${agendaSlug}' no encontrada`);
+					}
+					const result = await response.json();
+					console.log("Contactos obtenidos:", result);
+					setStore({ listacontactos: result });
+				} catch (error) {
+					console.error("Error al obtener contactos:", error.message);
+				}
 			},
 
 
