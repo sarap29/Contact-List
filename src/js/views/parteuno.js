@@ -45,7 +45,7 @@ export const Parteuno = () => {
       <div className="contenedor-agenda">
         {/* Muestra un mensaje si no hay contactos o si están cargando */}
         {store.listacontactos.length === 0 ? (
-          <p className="text-center mt-3">Cargando contactos o no hay contactos en esta agenda.</p>
+          <p className="text-center mt-3">No hay contactos en esta agenda. Añade tu primer contacto.</p>
         ) : (
           // Mapea y muestra los contactos si la lista no está vacía
           store.listacontactos.map((contact) => (
