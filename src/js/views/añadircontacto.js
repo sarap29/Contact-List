@@ -10,24 +10,34 @@ export const AñadirContacto = () => {
   const navigate = useNavigate(); // Obtén la función de navegación
 
   const [contact, setContact] = useState({
-    full_name: "",
+    name: "",
     email: "",
     phone: "",
     address: "",
-    agenda_slug: "sara",
+    agenda_slug: store.currentAgendaSlug, // ¡Ahora toma el slug de la agenda desde el store!
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null); // Estado para manejar errores
 
-  const enviarFormulario = (event) => {
+  const enviarFormulario = async (event) => { // Marcado como async
     event.preventDefault();
-    actions.crearContactos(contact);
-    setSubmitted(true);
+    setError(null); // Limpiar errores previos
+    try {
+      // Llama a la acción que ahora se encarga de verificar/crear la agenda
+      // y luego crear el contacto.
+      await actions.crearContactos(contact);
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Error al añadir el contacto:", err);
+      setError("No se pudo añadir el contacto. Por favor, inténtalo de nuevo."); // Mensaje de error para el usuario
+      setSubmitted(false); // No redirigir si hay error
+    }
   };
 
   // Si submitted es true, muestra un mensaje de confirmación y redirige después de un breve retraso
   if (submitted) {
-    // Realiza la redirección después de 2 segundos (2000 milisegundos)
+    // Realiza la redirección después de 3 segundos (3000 milisegundos)
     setTimeout(() => {
       navigate('/parteuno'); // Redirige a la página de inicio
     }, 3000);
@@ -39,7 +49,7 @@ export const AñadirContacto = () => {
             9:41
           </div>
           <div className="col">
-            <i className="fa-solid fa-battery-half"></i> <i class="fa-solid fa-wifi"></i>
+            <i className="fa-solid fa-battery-half"></i> <i className="fa-solid fa-wifi"></i>
           </div>
         </div>
 
@@ -49,37 +59,31 @@ export const AñadirContacto = () => {
           </div>
           <div className="col-12 alertanuevoeditado" >
             <div className="alert alert-success">
-              Tu contacto ha sido creado. 
-              Redirigiendo a la lista de contactos
+              Tu contacto ha sido creado.
+              Redirigiendo a la lista de contactos...
             </div>
           </div>
         </div>
         <div className="footer d-flex">
-        <div className="row">
-          <div className="col piepagina">
-            <Link to="/">
-              <i className="fa-solid fa-house"></i>
-            </Link>
-          </div>
-          <div className="col piepagina">
-            <Link to="/anadircontacto">
-              <i className="fa-solid fa-user-plus"></i>
-            </Link>
-          </div>
-          <div className="col piepagina">
-            <Link to="/parteuno">
-              <i className="fa-solid fa-address-book"></i>
-            </Link>
+          <div className="row">
+            <div className="col piepagina">
+              <Link to="/">
+                <i className="fa-solid fa-house"></i>
+              </Link>
+            </div>
+            <div className="col piepagina">
+              <Link to="/anadircontacto">
+                <i className="fa-solid fa-user-plus"></i>
+              </Link>
+            </div>
+            <div className="col piepagina">
+              <Link to="/parteuno">
+                <i className="fa-solid fa-address-book"></i>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-
-
-
-
-
-
     );
   }
 
@@ -90,42 +94,47 @@ export const AñadirContacto = () => {
           9:41
         </div>
         <div className="col">
-          <i className="fa-solid fa-battery-half"></i> <i class="fa-solid fa-wifi"></i>
+          <i className="fa-solid fa-battery-half"></i> <i className="fa-solid fa-wifi"></i>
         </div>
-
       </div>
-      <div className="container">
-      <div className="row ">
-  <div className="col-12">
-    <img className= "raya" src={contacto} />
-    </div>
-  </div>
-     
 
-      <div className="contact-list">
-        <div className="row">
+      <div className="container">
+        <div className="row ">
           <div className="col-12">
-            <h2>Nuevo contacto</h2>
+            <img className="raya" src={contacto} alt="Contacto" />
           </div>
         </div>
-      </div>
+
+        <div className="contact-list">
+          <div className="row">
+            <div className="col-12">
+              <h2>Nuevo contacto</h2>
+            </div>
+          </div>
+        </div>
+
+        {error && ( // Muestra el mensaje de error si existe
+          <div className="alert alert-danger" role="alert">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={enviarFormulario}>
           <div className="container mb-3">
-            <label className="mb-2">Full Name</label>
+            <label className="mb-2" htmlFor="name">Name</label>
             <input
               type="text"
-              id="full_name"
+              id="name"
               className="form-control"
               placeholder="Full name"
-              value={contact.full_name}
+              value={contact.name}
               onChange={(e) =>
-                setContact({ ...contact, full_name: e.target.value })
+                setContact({ ...contact, name: e.target.value })
               }
             ></input>
           </div>
           <div className="container mb-3">
-            <label className="mb-2">Email</label>
+            <label className="mb-2" htmlFor="email">Email</label>
             <input
               type="text"
               id="email"
@@ -136,7 +145,7 @@ export const AñadirContacto = () => {
             ></input>
           </div>
           <div className="container mb-3">
-            <label className="mb-2">Phone</label>
+            <label className="mb-2" htmlFor="phone">Phone</label>
             <input
               type="text"
               id="phone"
@@ -147,7 +156,7 @@ export const AñadirContacto = () => {
             ></input>
           </div>
           <div className="container mb-3">
-            <label className="mb-2">Address</label>
+            <label className="mb-2" htmlFor="address">Address</label>
             <input
               type="text"
               id="address"
