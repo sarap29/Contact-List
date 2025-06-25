@@ -2,7 +2,6 @@ import React, { useContext, useEffect } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import hr from "../../img/hr.png"; // Si no usas esta imagen, puedes eliminar esta línea
 import contacto from "../../img/contacto.png"
 
 

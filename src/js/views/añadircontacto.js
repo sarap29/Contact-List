@@ -7,8 +7,7 @@ import contacto from "../../img/contacto.png"
 
 export const AñadirContacto = () => {
   const { store, actions } = useContext(Context);
-  const navigate = useNavigate(); // Obtén la función de navegación
-
+  const navigate = useNavigate();
   const [contact, setContact] = useState({
     name: "",
     email: "",
