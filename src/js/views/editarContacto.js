@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import phone from "../../img/phone.png";
+import { Link } from "react-router-dom";
 import contacto from "../../img/contacto.png"
 
 export const EditarContacto = () => {
@@ -124,7 +124,7 @@ export const EditarContacto = () => {
 
         <div className="row ">
           <div className="col-12 presentacion" >
-            <img className="phone" src={phone} alt="Phone" />
+            <img className="phone" src={phone}></img>
           </div>
           <div className="col-12 alertanuevoeditado" >
             <div className="alert alert-success">
@@ -165,12 +165,12 @@ export const EditarContacto = () => {
         <div className="col">
           <i className="fa-solid fa-battery-half"></i> <i className="fa-solid fa-wifi"></i>
         </div>
-
       </div>
+
       <div className="container">
         <div className="row ">
           <div className="col-12">
-            <img className="raya" src={contacto} alt="Icono de contacto" />
+            <img className="raya" src={contacto} alt="Contacto" />
           </div>
         </div>
 
