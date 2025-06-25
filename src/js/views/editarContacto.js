@@ -1,8 +1,8 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { useParams, useNavigate } from "react-router-dom";
-import phone from "../../img/phone.png";
 import { Link } from "react-router-dom";
+import phone from "../../img/phone.png";
 import contacto from "../../img/contacto.png"
 
 export const EditarContacto = () => {
@@ -170,7 +170,7 @@ export const EditarContacto = () => {
       <div className="container">
         <div className="row ">
           <div className="col-12">
-            <img className="raya" src={contacto} alt="Contact decoration" />
+            <img className="raya" src={contacto} alt="Icono de contacto" />
           </div>
         </div>
 
